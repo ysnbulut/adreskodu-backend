@@ -1,0 +1,45 @@
+{
+	"name": "adreskodu-backend",
+	"version": "1.0.0",
+	"description": "adreskodu.org backend node js express js",
+	"engines": {
+		"node": "16.x"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"keywords": [
+		"adres",
+		"kodu"
+	],
+	"author": "ysnbulut hi@yasinbulut.com",
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^1.1.3",
+		"axios-cookiejar-support": "^4.0.3",
+		"body-parser": "^1.20.1",
+		"cheerio": "^1.0.0-rc.12",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"crypto-js": "^4.1.1",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"hashids": "^2.2.10",
+		"http": "^0.0.1-security",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.7.0",
+		"morgan": "^1.10.0",
+		"node-cache": "^5.1.2",
+		"tough-cookie": "^4.1.2",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.20"
+	}
+}
