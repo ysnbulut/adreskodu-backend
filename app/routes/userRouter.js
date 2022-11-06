@@ -6,9 +6,9 @@ const userLogin = require('../middleware/user/userLogin');
 const { createController, loginController, logoutController } = require('../controllers/userController');
 
 userRouter.all('/', (req, res) => {
-	res.send({
-		message: 'User Router',
-	});
+  res.send({
+    message: 'User Router',
+  });
 });
 userRouter.post('/create', createController);
 userRouter.post('/login', userLogin, loginController);

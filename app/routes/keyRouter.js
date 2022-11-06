@@ -7,9 +7,9 @@ const passwordHash = require('../middleware/user/passwordHash');
 const authKeyCreate = require('../middleware/auth/authCreate');
 
 keyRouter.all('/', (req, res) => {
-	res.send({
-		message: 'Key Router',
-	});
+  res.send({
+    message: 'Key Router',
+  });
 });
 
 keyRouter.post('/create', [(passwordHash, authKeyCreate)], create);

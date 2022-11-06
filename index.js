@@ -8,22 +8,21 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
-const port = 5000;
 const app = express();
 
 mongoose
-	.connect(
-		`mongodb+srv://adreskodu_ysnbulut:xaShWJAPGWkcsJ39@adreskodu.yhlaaz4.mongodb.net/adreskodudb?retryWrites=true&appname=adreskodudb&w=majority`,
-		{
-			useNewUrlParser: true,
-		}
-	)
-	.then(() => {
-		console.log('MongoDB connected!');
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+  .connect(
+    `mongodb+srv://${process.env.ATLAS_USER}:${process.env.ATLAS_PASSWORD}@adreskodu.yhlaaz4.mongodb.net/adreskodudb?retryWrites=true&appname=adreskodudb&w=majority`,
+    {
+      useNewUrlParser: true,
+    }
+  )
+  .then(() => {
+    console.log('MongoDB connected!');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // App Setup
 app.use(morgan('combined'));
@@ -43,14 +42,14 @@ const tokenRouter = require('./app/routes/tokenRouter');
 const apiRouter = require('./app/routes/apiRouter');
 
 app.get('/', (req, res) => {
-	res.send({
-		message: 'Naber!',
-	});
+  res.send({
+    message: 'Naber!',
+  });
 });
 app.post('/', (req, res) => {
-	res.send({
-		message: 'Naber!',
-	});
+  res.send({
+    message: 'Naber!',
+  });
 });
 //user create login logout
 app.use('/user', passwordHash, userRouter);
@@ -59,6 +58,6 @@ app.use('/auth', tokenRouter);
 app.use('/api', apiAuth, apiRouter);
 // Server Setup
 const server = http.createServer(app);
-server.listen(port, () => {
-	console.log(`Server listening on port: ${port}`);
+server.listen(process.env.PORT || 4034, () => {
+  console.log(`Server listening on port: 4034`);
 });
